@@ -1,10 +1,15 @@
-sonos-service:
-  build: node-sonos-http-api
-  ports:
-    - 5005:5005
-  net: "host"
+version: '2'
 
-prayer-service:
-  build: prayer-time-service
-  ports:
-    - 3000:3000
+services:
+  sonos:
+    build: node-sonos-http-api
+    ports:
+      - "5005:5005"
+    network_mode: "host"
+
+  prayer:
+    build: prayer-time-service
+    ports:
+      - "3000:3000"
+    links:
+      - sonos
