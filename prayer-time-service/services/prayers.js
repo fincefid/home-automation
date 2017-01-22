@@ -21,10 +21,8 @@ var prayers = {
             .post('http://www.diyanet.gov.tr/PrayerTime/PrayerTimesSet')
             .send({"countryName": "15", "stateName": "14096", "name": "14096"})
             .end(function (response) {
-                var test = moment('19:54', 'H:mm').subtract({minutes: 20});
                 var gunes = moment(response.body.Gunes, 'H:mm').subtract({minutes: 20});
                 this.scheduledTimes =  [
-                    test.format('H:mm'),
                     gunes.format('H:mm'),
                     response.body.Ogle,
                     response.body.Ikindi,
