@@ -18,4 +18,12 @@ public class HomeController {
 
         return String.format("Scheduled for: %s", scheduledTasks.getTimes());
     }
+
+    @RequestMapping("/update")
+    @ResponseBody
+    public String update() {
+
+        scheduledTasks.fetchPrayerTimes();
+        return String.format("Scheduled for: %s", scheduledTasks.getTimes());
+    }
 }
