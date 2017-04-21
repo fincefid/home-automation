@@ -1,0 +1,21 @@
+
+plugins {
+    id 'org.springframework.boot' version '1.5.2.RELEASE'
+    id 'java'
+}
+
+
+jar {
+    baseName = 'prayer-time-service'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:1.16.16"
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
