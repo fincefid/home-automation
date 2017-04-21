@@ -47,6 +47,8 @@ public class ScheduledTasks {
 
         String currentHourAndMinute = dateFormat.format(new Date());
 
+        log.info("Checking prayer time at: {} with: {}", currentHourAndMinute, times);
+
         if (times.contains(currentHourAndMinute)) {
             log.info("Prayer time at: {}", currentHourAndMinute);
             playAtSonos();
