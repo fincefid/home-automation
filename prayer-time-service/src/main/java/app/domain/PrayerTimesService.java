@@ -25,7 +25,7 @@ public class PrayerTimesService {
 
     public List<String> getTimes() {
 
-        PrayerTimesResponse response = restTemplate.postForObject("/PrayerTimesSet", locationInfo, PrayerTimesResponse.class);
+        PrayerTimesResponse response = restTemplate.postForObject("/MainPrayerTimesSet", locationInfo, PrayerTimesResponse.class);
 
         log.info("Prayer Response: {}", response);
 

@@ -18,7 +18,7 @@ public class Application {
 
     @Bean("prayerServiceClient")
     public RestTemplate prayerServiceClient(RestTemplateBuilder builder) {
-        return builder.rootUri("http://www.diyanet.gov.tr/PrayerTime").build();
+        return builder.rootUri("http://namaz.diyanet.gov.tr/PrayerTime").build();
     }
 
     @Bean("sonosClient")
