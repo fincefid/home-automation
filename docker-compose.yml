@@ -1,15 +1,19 @@
-version: '2'
+version: "2.1"
 
 services:
   sonos:
     build: node-sonos-http-api
     ports:
       - "5005:5005"
-    network_mode: "host"
+    network_mode: bridge
 
   prayer:
     build: prayer-time-service
     ports:
       - "3000:3000"
-    links:
-      - sonos
+    network_mode: bridge
+
+networks:
+  default:
+    external:
+      name: bridge
