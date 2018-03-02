@@ -1,14 +1,16 @@
-version: "2.1"
+version: "3"
 
 services:
   sonos:
     build: node-sonos-http-api
+    restart: always
     ports:
       - "5005:5005"
     network_mode: bridge
 
   prayer:
     build: prayer-time-service
+    restart: always
     ports:
       - "3000:3000"
     network_mode: bridge
